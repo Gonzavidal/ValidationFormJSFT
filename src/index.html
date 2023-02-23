@@ -1,141 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Payment form example</title>
-</head>
+  </head>
 
-<body>
-   <form> 
-    <div class="card mx-5 mt-5">
-
+  <body>
+    <form>
+      <div class="card mx-5 mt-5">
         <div class="card-header">
-            <div class="">
-                <h3>Payment form example</h3>
-            </div>
+          <div class="">
+            <h3>Payment form example</h3>
+          </div>
         </div>
-
         <div class="card-body my-2">
-
-            <form id="contact-form" role="form">
-                <div class="alert alert-danger" role="alert"><b>Some fields are missing</b></div>
-
-                <div class="row my-2">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="form_lastname">Card #</label>
-                            <div class="input-group"> <input type="text" id="cardnumber name="cardnumber" placeholder="XXXX XXXX XXXX"
-                                    class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="form_lastname">CVC #</label>
-                            <input id="cvc" type="text" name="cvc" class="form-control"
-                                placeholder="0000">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="form_lastname">$ Amount</label>
-                            <input id="amount" type="text" name="amount" class="form-control"
-                                placeholder="Amount">
-                        </div>
-                    </div>
+          <div
+            id="missing alerta"
+            class="alert-danger alert-dismissible fade show d-none"
+            role="alert"
+          >
+            <strong>Some fields are missing</strong>
+            <button
+              type="button"
+              id="missing"
+              class="missing btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="row my-2">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="form_lastname">Card #</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    id="cardnmbr"
+                    name=""
+                    placeholder="XXXX XXXX XXXX"
+                    class="cardnmbr form-control"
+                  />
+                  <span
+                    class="cardnmbr invalid-feedback error-cardnumber"
+                  ></span>
                 </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="form_lastname">CVC #</label>
+                <input
+                  id="cvc"
+                  type="text"
+                  name="cvc"
+                  class="cvc form-control"
+                  placeholder="0000"
+                />
+                <span class="cvc invalid-feedback error-cvc"></span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="form_lastname">$ Amount</label>
+                <input
+                  id="amount"
+                  type="text"
+                  name="amount"
+                  class="amount form-control"
+                  placeholder="$ Amount"
+                />
+                <span class="amount invalid-feedback error-amount"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row my-2">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_name">First name</label>
+                <input
+                  id="firstname"
+                  type="text"
+                  name="firstname"
+                  class="firstname form-control"
+                />
+                <span class="firstname invalid-feedback error-firstname"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_lastname">Last name</label>
+                <input
+                  id="lastname"
+                  type="text"
+                  name="lastname"
+                  class="lastname form-control"
+                />
+                <span class="lastname invalid-feedback error-lastname"></span>
+              </div>
+            </div>
+          </div>
 
-                <div class="row my-2">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="form_name">First name</label>
-                            <input id="firstname type="text" name="firstname" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="form_lastname">Last name</label>
-                            <input id="lastnametype="text" name="lastname" class="form-control">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row my-2">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="form_email">City</label>
-                            <input id="city" type="text" name="ity" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="form_need">State</label>
-                            <select id="state" name="state" class="form-select">
-                                <option value="" selected disabled>Pick a state</option>
-                                <option>Arica</option>
-                                <option>Antofagasta</option>
-                                <option>Santiago</option>
-                                <option>Concepcion</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="form_email">Postal Code</label>
-                            <input id="postalcode type="text" name="postalcode" class="form-control">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row my-2">
-                    <br />
-                    <div class="col-md-6">
-                        <p>We accept:</p>
-                        <div class="form-group text-center pt-2 rounded bg-secondary bg-opacity-75 h-25 w-25">
-                            <input type="radio" name="genero" id="f" value="F" /><i
-                                class="fa-brands fa-cc-mastercard ms-1"></i>
-                            <input type="radio" name="genero" id="m" value="M" /><i
-                                class="fa-brands fa-cc-visa  ms-1"></i>
-                            <input type="radio" name="genero" id="f" value="F" /><i
-                                class="fa-brands fa-cc-diners-club  ms-1"></i>
-                            <input type="radio" name="genero" id="f" value="F" /><i
-                                class="fa-brands fa-cc-amex  ms-1"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="form_message">Message *</label>
-                            <textarea id="form_message" name="message" class="form-control" placeholder=""
-                                rows="4"></textarea>
-                        </div>
-                        <p class="text-muted">Add any notes here.</p>
-                    </div>
-                </div>
+          <div class="row my-2">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_email">City</label>
+                <input
+                  id="city"
+                  type="text"
+                  name="city"
+                  class="city form-control"
+                />
+                <span class="city invalid-feedback error-city"></span>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="form_need">State</label>
+                <select id="state" name="state" class="state form-select">
+                  <option value="" selected disabled>Pick a state</option>
+                  <option>Arica</option>
+                  <option>Antofagasta</option>
+                  <option>Santiago</option>
+                  <option>Concepcion</option>
+                </select>
+                <span class="invalid-feedback error-state"></span>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="form_email">Postal Code</label>
+                <input
+                  id="postal"
+                  type="text"
+                  name="postalcode"
+                  class="postal form-control"
+                />
+                <span class="invalid-feedback error-portalcode"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row my-2">
+            <br />
+            <div class="col-md-6">
+              <p>We accept:</p>
+              <div
+                class="form-group text-center pt-2 rounded bg-secondary bg-opacity-75 h-25 w-25"
+              >
+                <input type="radio" name="genero" id="f" value="F" /><i
+                  class="fa-brands fa-cc-mastercard ms-1"
+                ></i>
+                <input type="radio" name="genero" id="m" value="M" /><i
+                  class="fa-brands fa-cc-visa  ms-1"
+                ></i>
+                <input type="radio" name="genero" id="f" value="F" /><i
+                  class="fa-brands fa-cc-diners-club  ms-1"
+                ></i>
+                <input type="radio" name="genero" id="f" value="F" /><i
+                  class="fa-brands fa-cc-amex  ms-1"
+                ></i>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form_message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="message form-control"
+                  placeholder=""
+                  rows="4"
+                ></textarea>
+              </div>
+              <p class="text-muted">Add any notes here.</p>
+            </div>
+          </div>
         </div>
         <div class="card-footer my-2 text-end">
-            <div class="col-md-12">
-                <input type="submit" class="btn btn-secondary btn-send  pt-2 btn-block" value="Cancel">
-                <input type="submit" class="btn btn-primary btn-send  pt-2 btn-block" value="Send">
-            </div>
-            </form>
-
-
+          <div class="col-md-12">
+            <button
+              type="reset"
+              class="btn btn-secondary btn-send  pt-2 btn-block"
+            >
+              Cancel
+            </button>
+            <button
+              id="submit"
+              type="submit"
+              class="btn btn-primary btn-send  pt-2 btn-block"
+            >
+              Send
+            </button>
+          </div>
         </div>
-    </div>
-
-</form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="src/app.js"></script>
-
-</body>
-
+      </div>
+    </form>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
+  </body>
 </html>

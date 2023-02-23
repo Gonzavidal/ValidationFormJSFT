@@ -1,104 +1,110 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
-/*window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};*/
-
-const card = document.getElementById("cardnumber");
-const cvc = document.getElementById("cvc");
-const amount = document.getElementById("amount");
-const firstname = document.getElementById("firstname");
-const lastname = document.getElementById("lastname");
-const city = document.getElementById("city");
-const state = document.getElementById("state");
-const postalcode = document.getElementById("postalcode");
-
 let form = document.querySelector("form");
+
 form.addEventListener("submit", e => {
   e.preventDefault();
+  let enter = true;
+  let missing = document.querySelector("#missing");
+  let cardnumber = document.querySelector("#cardnmbr");
+  let cvc = document.querySelector("#cvc");
+  let amount = document.querySelector("#amount");
+  let firstname = document.querySelector("#firstname");
+  let lastname = document.querySelector("#lastname");
+  let city = document.querySelector("#city");
+  let state = document.querySelector("#state");
+  let postalcode = document.querySelector("#postal");
+  let message = document.querySelector("#message");
 
-  validateInputs();
+  if (cardnumber.value === "") {
+    enter = false;
+    cardnumber.classList.add("is-invalid");
+  } else if (!cardnumber.test(cardnumber.value)) {
+    enter = false;
+    cardnumber.classList.add("is-invalid");
+  } else {
+    cardnumber.classList.remove("is-invalid");
+  }
+
+  if (cvc.value === "") {
+    enter = false;
+    cvc.classList.add("is-invalid");
+  } else if (!cvc.test(cvc.value)) {
+    enter = false;
+    cvc.classList.add("is-invalid");
+  } else {
+    cvc.classList.remove("is-invalid");
+  }
+
+  if (amount.value === "") {
+    enter = false;
+    amount.classList.add("is-invalid");
+  } else if (!amount.test(amount.value)) {
+    enter = false;
+    amount.classList.add("is-invalid");
+  } else {
+    amount.classList.remove("is-invalid");
+  }
+
+  if (firstname.value === "") {
+    enter = false;
+    firstname.classList.add("is-invalid");
+  } else if (!firstname.test(firstname.value)) {
+    enter = false;
+    firstname.classList.add("is-invalid");
+  } else {
+    firstname.classList.remove("is-invalid");
+  }
+
+  if (lastname.value === "") {
+    enter = false;
+    lastname.classList.add("is-invalid");
+  } else if (!lastname.test(lastname.value)) {
+    enter = false;
+    lastname.classList.add("is-invalid");
+  } else {
+    lastname.classList.remove("is-invalid");
+  }
+
+  if (city.value === "") {
+    enter = false;
+    city.classList.add("is-invalid");
+  } else if (!city.test(city.value)) {
+    enter = false;
+    city.classList.add("is-invalid");
+  } else {
+    city.classList.remove("is-invalid");
+  }
+
+  if (postalcode.value === "") {
+    enter = false;
+    postalcode.classList.add("is-invalid");
+  } else if (!postalcode.test(postalcode.value)) {
+    enter = false;
+    postalcode.classList.add("is-invalid");
+  } else {
+    postalcode.classList.remove("is-invalid");
+  }
+
+  if (state.value === "") {
+    enter = false;
+    state.classList.add("is-invalid");
+  } else {
+    state.classList.remove("is-invalid");
+  }
+
+  if (message.value === "") {
+    enter = false;
+    message.classList.add("is-invalid");
+  } else if (!message.test(message.value)) {
+    enter = false;
+    message.classList.add("is-invalid");
+  } else {
+    message.classList.remove("is-invalid");
+  }
+
+  if (enter) {
+    form.submit();
+  } else {
+    missing.classList.remove("d-none");
+    missing.classList.add("d-block");
+  }
 });
-
-const setError = (element, message) => {
-  const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector(".error");
-
-  errorDisplay.innerText = message;
-  inputControl.classList.add("error");
-  inputControl.classList.remove("success");
-};
-
-const setSuccess = element => {
-  const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector(".error");
-
-  errorDisplay.innerText = "";
-  inputControl.classList.add("success");
-  inputControl.classList.remove("error");
-};
-
-const validateInputs = () => {
-  const cardValue = card.value.trim();
-  const cvcValue = cvc.value.trim();
-  const amountValue = amount.value.trim();
-  const firstnameValue = firstname.value.trim();
-  const lastnameValue = lastname.Value.trim();
-  const cityValue = city.value.trim();
-  const stateValue = state.value.trim();
-  const postalcodeValue = postalcode.value.trim();
-
-  if (cardValue === "") {
-    setError(card, "Card number is required");
-  } else {
-    setSuccess(card);
-  }
-
-  if (cvcValue === "") {
-    setError(cvc, "CVC is required");
-  } else {
-    setSuccess(cvc);
-  }
-
-  if (amountValue === "") {
-    setError(amount, "Amount is required");
-  } else {
-    setSuccess(amount);
-  }
-
-  if (firstnameValue === "") {
-    setError(firstname, "First Name is required");
-  } else {
-    setSuccess(firstname);
-  }
-
-  if (lastnameValue === "") {
-    setError(lastname, "Last Name is required");
-  } else {
-    setSuccess(lastname);
-  }
-
-  if (cityValue === "") {
-    setError(city, "City is required");
-  } else {
-    setSuccess(city);
-  }
-
-  if (stateValue === "") {
-    setError(state, "State is required");
-  } else {
-    setSuccess(state);
-  }
-
-  if (postalcodeValue === "") {
-    setError(postalcode, "Postal Code is required");
-  } else {
-    setSuccess(postalcode);
-  }
-};
