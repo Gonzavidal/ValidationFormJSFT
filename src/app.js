@@ -17,6 +17,7 @@ form.addEventListener("submit", e => {
   if (cardnumber.value === "") {
     enter = false;
     cardnumber.classList.add("is-invalid");
+    cardnumber.style.backgroundColor = "#f8d7da";
   } else if (!cardnumber.test(cardnumber.value)) {
     enter = false;
     cardnumber.classList.add("is-invalid");
@@ -27,6 +28,7 @@ form.addEventListener("submit", e => {
   if (cvc.value === "") {
     enter = false;
     cvc.classList.add("is-invalid");
+    cvc.style.backgroundColor = "#f8d7da";
   } else if (!cvc.test(cvc.value)) {
     enter = false;
     cvc.classList.add("is-invalid");
@@ -37,6 +39,7 @@ form.addEventListener("submit", e => {
   if (amount.value === "") {
     enter = false;
     amount.classList.add("is-invalid");
+    amount.style.backgroundColor = "#f8d7da";
   } else if (!amount.test(amount.value)) {
     enter = false;
     amount.classList.add("is-invalid");
@@ -47,6 +50,7 @@ form.addEventListener("submit", e => {
   if (firstname.value === "") {
     enter = false;
     firstname.classList.add("is-invalid");
+    firstname.style.backgroundColor = "#f8d7da";
   } else if (!firstname.test(firstname.value)) {
     enter = false;
     firstname.classList.add("is-invalid");
@@ -57,6 +61,7 @@ form.addEventListener("submit", e => {
   if (lastname.value === "") {
     enter = false;
     lastname.classList.add("is-invalid");
+    lastname.style.backgroundColor = "#f8d7da";
   } else if (!lastname.test(lastname.value)) {
     enter = false;
     lastname.classList.add("is-invalid");
@@ -67,6 +72,7 @@ form.addEventListener("submit", e => {
   if (city.value === "") {
     enter = false;
     city.classList.add("is-invalid");
+    city.style.backgroundColor = "#f8d7da";
   } else if (!city.test(city.value)) {
     enter = false;
     city.classList.add("is-invalid");
@@ -77,6 +83,7 @@ form.addEventListener("submit", e => {
   if (postalcode.value === "") {
     enter = false;
     postalcode.classList.add("is-invalid");
+    postalcode.style.backgroundColor = "#f8d7da";
   } else if (!postalcode.test(postalcode.value)) {
     enter = false;
     postalcode.classList.add("is-invalid");
@@ -87,6 +94,7 @@ form.addEventListener("submit", e => {
   if (state.value === "") {
     enter = false;
     state.classList.add("is-invalid");
+    state.style.backgroundColor = "#f8d7da";
   } else {
     state.classList.remove("is-invalid");
   }
@@ -94,6 +102,7 @@ form.addEventListener("submit", e => {
   if (message.value === "") {
     enter = false;
     message.classList.add("is-invalid");
+    message.style.backgroundColor = "#f8d7da";
   } else if (!message.test(message.value)) {
     enter = false;
     message.classList.add("is-invalid");
